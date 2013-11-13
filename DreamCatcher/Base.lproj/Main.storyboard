@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cuC-aK-4Fo">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller - DreamCatcher-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController title="DreamCatcher" id="vXZ-lx-hvc" customClass="DCViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wvd-Dd-ZPs"/>
+                        <viewControllerLayoutGuide type="bottom" id="hPL-CL-GBQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mks-c4-4zP">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="6oZ-wo-WLT">
+                            <connections>
+                                <segue destination="zMf-ls-QiQ" kind="modal" id="mSj-pZ-5Vl"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="zf5-fx-w0f">
+                            <connections>
+                                <segue destination="W3o-i9-qjF" kind="modal" id="CaM-od-OdA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-16" y="-272"/>
+        </scene>
+        <!--Options View Controller-->
+        <scene sceneID="oQv-FR-xOP">
+            <objects>
+                <viewController id="tux-l6-77W" customClass="DCOptionsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TvP-Gq-E5n"/>
+                        <viewControllerLayoutGuide type="bottom" id="voA-w1-7jT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8cj-n6-T2J">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jnp-VJ-8li">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OkC-zJ-Hid">
+                            <connections>
+                                <action selector="dismissVC:" destination="tux-l6-77W" id="wwm-Bb-KLz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="UNF-ql-s9Y"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uGy-SE-JB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="965" y="-6"/>
+        </scene>
+        <!--Add Dream View Controller-->
+        <scene sceneID="Jzx-9Q-LhV">
+            <objects>
+                <viewController id="bD0-sq-LSf" customClass="DCAddDreamViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n18-Gq-QsH"/>
+                        <viewControllerLayoutGuide type="bottom" id="vci-Ua-35c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r6D-Rj-j8S">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wae-2P-y3w">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bD0-sq-LSf" id="dzz-Qm-Qvk"/>
+                                    <outlet property="delegate" destination="bD0-sq-LSf" id="BBI-Yb-5c1"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0Eh-Y2-8PF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="RfP-9X-FY2">
+                            <connections>
+                                <action selector="dismissVC:" destination="bD0-sq-LSf" id="rkR-r3-BsH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="vQN-hw-XaB"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="im1-yb-efz" kind="push" identifier="1" id="JFD-ec-Fn9"/>
+                        <segue destination="GSr-9L-yeB" kind="push" identifier="3" id="mda-e2-odW"/>
+                        <segue destination="5UU-cQ-lbK" kind="push" identifier="2" id="e7A-ks-que"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dm4-Ux-SfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="973" y="-861"/>
+        </scene>
+        <!--Add Dream Words View Controller-->
+        <scene sceneID="cI2-Lk-oWV">
+            <objects>
+                <viewController id="im1-yb-efz" customClass="DCAddDreamWordsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O5M-H7-0CD"/>
+                        <viewControllerLayoutGuide type="bottom" id="hQz-bP-Y7C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OwZ-9f-qWo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of your Dream here..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PU1-JK-HcZ">
+                                <rect key="frame" x="20" y="132" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33Q-t7-4pH">
+                                <rect key="frame" x="26" y="237" width="274" height="220"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">As a  	&lt;type of your role&gt;, 
+I want  &lt;to achieve some task&gt; 
+so that I can 
+&lt;achieve some goal/benefit/value&gt;.</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="toolTip"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dream name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKF-c6-sD4">
+                                <rect key="frame" x="26" y="95" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dream description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5p-4i-Zs9">
+                                <rect key="frame" x="26" y="192" width="141" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ija-FX-6WZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wYC-F9-eLa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975" y="-1554"/>
+        </scene>
+        <!--Add Dream Pics View Controller-->
+        <scene sceneID="CS0-TM-N0X">
+            <objects>
+                <viewController id="GSr-9L-yeB" customClass="DCAddDreamPicsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fGc-wO-AtY"/>
+                        <viewControllerLayoutGuide type="bottom" id="sAT-uk-yzi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZZW-ea-zEe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hg-Df-94x">
+                                <rect key="frame" x="10" y="10" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Cancel" id="d85-lh-T0e"/>
+                                    <barButtonItem width="184" style="plain" systemItem="fixedSpace" id="yNB-bl-Ry7"/>
+                                    <barButtonItem systemItem="save" id="DkG-b5-gxH"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eIz-Oc-dte"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="65I-Uz-fmF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1805" y="-1554"/>
+        </scene>
+        <!--Add Dream Voice View Controller-->
+        <scene sceneID="QYP-Lz-xUW">
+            <objects>
+                <viewController id="5UU-cQ-lbK" customClass="DCAddDreamVoiceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8e5-Os-Faq"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hh7-8o-fDC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f02-PK-wO8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W1O-hu-Q7I">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Cancel" id="EdV-ku-XnW"/>
+                                    <barButtonItem width="184" style="plain" systemItem="fixedSpace" id="0SF-Ls-Dr5"/>
+                                    <barButtonItem systemItem="save" id="jFu-v2-sxR"/>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hBu-na-Les">
+                                <rect key="frame" x="20" y="225" width="121" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="play-75.png">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Play">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="audioPlay:" destination="5UU-cQ-lbK" eventType="touchUpInside" id="nXN-df-AiM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kTo-z5-Bew">
+                                <rect key="frame" x="20" y="79" width="125" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="micro-50.png">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Record">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="audioRecord:" destination="5UU-cQ-lbK" eventType="touchUpInside" id="klC-eu-jwt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jA6-Ry-wHT">
+                                <rect key="frame" x="94" y="377" width="133" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="delete_message-50.png">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="  Delete">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kiA-Cz-YBu">
+                                <rect key="frame" x="198" y="92" width="102" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="stop-50.png">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Stop">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="audioStop:" destination="5UU-cQ-lbK" eventType="touchUpInside" id="ufR-9i-UQ3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EzE-xQ-g6c">
+                                <rect key="frame" x="198" y="239" width="102" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="stop-50.png">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Stop">
+                                            <attributes>
+                                                <font key="NSFont" size="15" name="HelveticaNeue"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q9Y-Mq-sPz">
+                                <rect key="frame" x="85" y="335" width="150" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hdh-gs-GDY" customClass="DCOscilloscopeView">
+                                <rect key="frame" x="43" y="162" width="257" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PUV-W7-JfA"/>
+                    <connections>
+                        <outlet property="audioProgress" destination="Q9Y-Mq-sPz" id="VD5-jq-THx"/>
+                        <outlet property="oscilloscopeView" destination="hdh-gs-GDY" id="9YF-P8-T8R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FOq-9k-Hdm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1401" y="-1554"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="I84-z9-w6E">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cuC-aK-4Fo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wWm-Vr-r1s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="riT-qO-0db"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="77B-eX-n8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-526" y="-272"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ks2-6I-xav">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W3o-i9-qjF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ta1-T4-6Al">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tux-l6-77W" kind="relationship" relationship="rootViewController" id="LGk-60-hwm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hmk-rC-Z7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="467" y="-14"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jPL-e0-kO7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zMf-ls-QiQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Eve-v3-KJq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bD0-sq-LSf" kind="relationship" relationship="rootViewController" id="Oh4-IH-J0z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4KV-8m-x08" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="467" y="-861"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="delete_message-50.png" width="50" height="50"/>
+        <image name="micro-50.png" width="50" height="50"/>
+        <image name="play-75.png" width="75" height="75"/>
+        <image name="stop-50.png" width="50" height="50"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
