@@ -1,18 +1,18 @@
 //
-//  DCAddDreamWordsViewController.m
+//  DCViewController.m
 //  DreamCatcher
 //
-//  Created by Aneesh on 08/11/13.
-//  Copyright (c) 2013 Ammini Inc. All rights reserved.
+//  Created by Aneesh on 14/01/14.
+//  Copyright (c) 2014 Ammini Inc. All rights reserved.
 //
 
-#import "DCAddDreamWordsViewController.h"
+#import "DCViewController.h"
 
-@interface DCAddDreamWordsViewController ()
+@interface DCViewController ()
 
 @end
 
-@implementation DCAddDreamWordsViewController
+@implementation DCViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,8 +27,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.title=@"Add Words to it!";
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,7 +34,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(IBAction)dismissVC:(id)sender{
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-}
+
 @end
