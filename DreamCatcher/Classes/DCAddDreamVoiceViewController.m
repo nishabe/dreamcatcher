@@ -8,6 +8,7 @@
 
 #import "DCAddDreamVoiceViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "DCUtils.h"
 
 
 @interface DCAddDreamVoiceViewController ()
@@ -18,14 +19,6 @@
 
 @implementation DCAddDreamVoiceViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -33,18 +26,25 @@
 	// Do any additional setup after loading the view.
     self.title=@"Add Voice to it!";
     //Audio Recording Setup
-    self.audioFilePath=[NSTemporaryDirectory() stringByAppendingString:@"audioRecording.m4a"];
+    self.audioFilePath=[DCUtils getFileName:nil withExtension:@".m4a"];
+
     self.audioFileURL = [NSURL fileURLWithPath:self.audioFilePath];
     NSDictionary *audioSettings = [NSDictionary dictionaryWithObjectsAndKeys:
                                    [NSNumber numberWithFloat:44100],AVSampleRateKey,
                                    [NSNumber numberWithInt: kAudioFormatAppleLossless],AVFormatIDKey,
                                    [NSNumber numberWithInt: 1],AVNumberOfChannelsKey,
                                    [NSNumber numberWithInt:AVAudioQualityMedium],AVEncoderAudioQualityKey,nil];
-    
+    NSError *error = nil;
     self.audioRecorder = [[AVAudioRecorder alloc]
                           initWithURL:self.audioFileURL
                           settings:audioSettings
                           error:nil];
+    if (error)
+    {
+        NSLog(@"error: %@", [error localizedDescription]);
+    } else {
+        [self.audioRecorder prepareToRecord];
+    }
 }
 -(void)showRecordingIndicatorWithAnimation{
     CABasicAnimation *pulseAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
@@ -132,6 +132,10 @@
     self.recordingIndicator.hidden=NO;
     self.elapsedTimeIndicator.hidden=NO;
     [self showElapsedTimeIndicator];
+    if (![self.audioRecorder prepareToRecord])
+    {
+        NSLog(@"Error: Prepare to record failed");
+    }
     [self.audioRecorder record];
 }
 - (void)audioRecordingStop

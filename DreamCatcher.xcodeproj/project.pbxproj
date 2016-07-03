@@ -11,6 +11,8 @@
 		9C337C271833639B00FA3BF4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C337C261833639B00FA3BF4 /* QuartzCore.framework */; };
 		9C337C29183363A500FA3BF4 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C337C28183363A500FA3BF4 /* OpenGLES.framework */; };
 		9C337C2B183363B100FA3BF4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C337C2A183363B100FA3BF4 /* AudioToolbox.framework */; };
+		9C4C2F6E1887B79E000514FC /* DCUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C2F6D1887B79E000514FC /* DCUtils.m */; };
+		9C4C2F72188FB116000514FC /* DCDreamPlayBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C2F71188FB116000514FC /* DCDreamPlayBackViewController.m */; };
 		9CB5884B1830C73B00375BEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CB588491830C73B00375BEA /* Main.storyboard */; };
 		9CB92CB6182C93B300B62EE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB92CB5182C93B300B62EE1 /* Foundation.framework */; };
 		9CB92CB8182C93B300B62EE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB92CB7182C93B300B62EE1 /* CoreGraphics.framework */; };
@@ -61,6 +63,10 @@
 		9C337C261833639B00FA3BF4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9C337C28183363A500FA3BF4 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		9C337C2A183363B100FA3BF4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9C4C2F6C1887B79E000514FC /* DCUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCUtils.h; path = Classes/DCUtils.h; sourceTree = "<group>"; };
+		9C4C2F6D1887B79E000514FC /* DCUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCUtils.m; path = Classes/DCUtils.m; sourceTree = "<group>"; };
+		9C4C2F70188FB116000514FC /* DCDreamPlayBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCDreamPlayBackViewController.h; path = Classes/DCDreamPlayBackViewController.h; sourceTree = "<group>"; };
+		9C4C2F71188FB116000514FC /* DCDreamPlayBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCDreamPlayBackViewController.m; path = Classes/DCDreamPlayBackViewController.m; sourceTree = "<group>"; };
 		9CB5884A1830C73B00375BEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CB92CB2182C93B300B62EE1 /* DreamCatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamCatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB92CB5182C93B300B62EE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -141,6 +147,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C4C2F6F188FB0E3000514FC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9C4C2F6C1887B79E000514FC /* DCUtils.h */,
+				9C4C2F6D1887B79E000514FC /* DCUtils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		9CB92CA9182C93B300B62EE1 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +194,7 @@
 		9CB92CBB182C93B300B62EE1 /* DreamCatcher */ = {
 			isa = PBXGroup;
 			children = (
+				9C4C2F6F188FB0E3000514FC /* Utils */,
 				9CE65653188666260035DBA9 /* BSKeyboardControls */,
 				9CC238E618791ED100BDFC44 /* ViewControllers */,
 				9CB92CC4182C93B300B62EE1 /* DCAppDelegate.h */,
@@ -261,6 +277,8 @@
 				9CC238F018791F1600BDFC44 /* DCOptionsViewController.m */,
 				9CE6560C18865C860035DBA9 /* DCViewController.h */,
 				9CE6560D18865C860035DBA9 /* DCViewController.m */,
+				9C4C2F70188FB116000514FC /* DCDreamPlayBackViewController.h */,
+				9C4C2F71188FB116000514FC /* DCDreamPlayBackViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -285,6 +303,7 @@
 				9CB92CAE182C93B300B62EE1 /* Sources */,
 				9CB92CAF182C93B300B62EE1 /* Frameworks */,
 				9CB92CB0182C93B300B62EE1 /* Resources */,
+				9CBE8206196531B70096A57E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -320,7 +339,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DC;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Ammini Inc";
 				TargetAttributes = {
 					9CB92CD2182C93B300B62EE1 = {
@@ -385,6 +404,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9CBE8206196531B70096A57E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9CB92CAE182C93B300B62EE1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -398,7 +433,9 @@
 				9CB92CC6182C93B300B62EE1 /* DCAppDelegate.m in Sources */,
 				9CE6565D188666260035DBA9 /* BSKeyboardControls.m in Sources */,
 				9CC238F318791F1600BDFC44 /* DCAddDreamPicsViewController.m in Sources */,
+				9C4C2F6E1887B79E000514FC /* DCUtils.m in Sources */,
 				9CC238F718791F1600BDFC44 /* DCOptionsViewController.m in Sources */,
+				9C4C2F72188FB116000514FC /* DCDreamPlayBackViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +502,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -504,7 +540,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -562,7 +597,6 @@
 		9CB92CE8182C93B300B62EE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DreamCatcher.app/DreamCatcher";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -585,7 +619,6 @@
 		9CB92CE9182C93B300B62EE1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DreamCatcher.app/DreamCatcher";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

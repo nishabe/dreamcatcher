@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface DCAddDreamViewController : UIViewController
+@interface DCAddDreamViewController : UITableViewController
 
 -(IBAction)dismissVC:(id)sender;
 @end
